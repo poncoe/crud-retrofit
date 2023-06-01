@@ -23,7 +23,7 @@ interface ApiRequestBiodata {
     @FormUrlEncoded
     @POST("update.php")
     fun updateData(
-        @Field("id") id: String,
+        @Field("id") id: String?,
         @Field("nama") nama: String,
         @Field("usia") usia: String,
         @Field("domisili") domisili: String
@@ -31,5 +31,5 @@ interface ApiRequestBiodata {
 
     @FormUrlEncoded
     @POST("delete.php")
-    fun deleteData(@Field("id") id: String): Call<ResponsModel>
+    fun deleteData(@Field("id") id: String?): Call<ResponsModel>
 }
