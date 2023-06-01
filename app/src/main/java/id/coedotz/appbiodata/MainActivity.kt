@@ -96,6 +96,8 @@ class MainActivity : AppCompatActivity() {
                     Log.d("Retro", "Response")
                     Toast.makeText(this@MainActivity, response.body()?.pesan, Toast.LENGTH_SHORT).show()
                     pd.hide()
+                    val gotampil = Intent(this@MainActivity, TampilData::class.java)
+                    startActivity(gotampil)
                 }
 
                 override fun onFailure(call: Call<ResponsModel>, t: Throwable) {
@@ -124,6 +126,8 @@ class MainActivity : AppCompatActivity() {
 
                     if (kode == "1") {
                         Toast.makeText(this@MainActivity, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
+                        val gotampil = Intent(this@MainActivity, TampilData::class.java)
+                        startActivity(gotampil)
                     } else {
                         Toast.makeText(this@MainActivity, "Data Error tidak berhasil disimpan", Toast.LENGTH_SHORT)
                             .show()
